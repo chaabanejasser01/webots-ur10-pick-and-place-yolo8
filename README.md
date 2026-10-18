@@ -19,7 +19,7 @@
 
 <p align="center">
   <b>⚡ Accelerated Simulation Demo (2.5x speed)</b><br/>
-  <i>High-definition video available: <a href="linkedin-video-accelerated.mp4"><code>linkedin-video-accelerated.mp4</code></a> or <a href="assets/simulation_accelerated_h264.mp4"><code>assets/simulation_accelerated_h264.mp4</code></a></i>
+  <i>Full-length demonstration video: <a href="assets/ur10e_pick_and_place_demo.mp4"><code>assets/ur10e_pick_and_place_demo.mp4</code></a></i>
 </p>
 
 </div>
@@ -32,7 +32,7 @@
 *Robotics & Mechatronics Engineering Student | National Engineering School of Sousse (ENISO)*  
 
 - 💼 **LinkedIn**: [linkedin.com/in/jasser-chaabane](https://www.linkedin.com/in/jasser-chaabane)
-- 🐙 **GitHub**: [github.com/Jasser-ch](https://github.com/Jasser-ch)
+- 🐙 **GitHub**: [github.com/chaabanejasser01](https://github.com/chaabanejasser01)
 - 📧 **Email**: [jasser.chaabane@eniso.u-sousse.tn](mailto:jasser.chaabane@eniso.u-sousse.tn)
 - 📄 **Curriculum Vitae**: [View Resume / CV (PDF)](cv.pdf)
 
@@ -156,8 +156,7 @@ stateDiagram-v2
 webots-ur10-pick-and-place-yolo8/
 ├── assets/
 │   ├── demo.gif                          # Accelerated preview GIF for README
-│   ├── simulation_accelerated.mp4        # 2.5x accelerated simulation video
-│   ├── simulation_accelerated_h264.mp4   # Web-optimized H.264 video
+│   ├── ur10e_pick_and_place_demo.mp4     # Full 2.5x accelerated simulation demo
 │   ├── system_architecture.svg           # High-resolution vector architecture diagram
 │   ├── pick_and_place_pipeline.png       # 6-stage annotated sequential breakdown
 │   ├── conveyor_approach.png             # Frame snapshot: Conveyor approach
@@ -194,7 +193,7 @@ webots-ur10-pick-and-place-yolo8/
 ├── requirements.txt                      # Python dependencies
 ├── start_yolo_server.bat                 # 1-Click launcher for Windows
 ├── start_yolo_server.sh                  # 1-Click launcher for Linux / macOS
-├── linkedin-video-accelerated.mp4        # Fast simulation video (ready for LinkedIn)
+├── ur10e_pick_and_place_demo.mp4         # Standalone simulation demo video
 └── cv.pdf                                # Author resume
 ```
 
@@ -208,7 +207,7 @@ webots-ur10-pick-and-place-yolo8/
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/Jasser-ch/webots-ur10-pick-and-place-yolo8.git
+git clone https://github.com/chaabanejasser01/webots-ur10-pick-and-place-yolo8.git
 cd webots-ur10-pick-and-place-yolo8
 ```
 
