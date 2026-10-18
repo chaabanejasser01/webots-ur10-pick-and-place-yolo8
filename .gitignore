@@ -1,0 +1,61 @@
+# Byte-compiledByte-compiled / optimized / DLL/ optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensionsC extensions / build artifactsbuild artifacts
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.directory
+
+# Operating System filesOperating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# AI Agent & CLI workspace metadata
+.agents/
+.gemini/
+
+# Logs & AI Agent & CLI workspace metadata
+.agents/
+.gemini/
+
+# Local raw backups & temporary files*-original.mp4
+*.log
+/tmp/
+*tmp/
+*.tmp
+*.bak
+EOFtmp
+*.bak
+linkedin-video-original.mp4

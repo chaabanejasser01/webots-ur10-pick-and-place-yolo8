@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 20px; fill: #1e293b; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #64748b; }
+      .box-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 15px; }
+      .box-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 12px; fill: #475569; }
+      .badge { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 11px; text-anchor: middle; }
+      .arrow-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 500; fill: #2563eb; }
+    </style>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#dbeafe" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff" />
+      <stop offset="100%" stop-color="#f3e8ff" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" />
+      <stop offset="100%" stop-color="#fef3c7" />
+    </linearGradient>
+    <filter id="shadow" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8b5cf6" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="560" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="40" y="48" class="title">UR10e Vision-Guided Pick-and-Place System Architecture</text>
+  <text x="40" y="70" class="subtitle">Closed-Loop Perception, TCP Inter-Process Communication &amp; Analytical Kinematics</text>
+
+  <!-- Flow 1: Conveyor Belt Subsystem -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="110" width="260" height="180" rx="12" fill="url(#amberGrad)" stroke="#f59e0b" stroke-width="1.5" />
+    <rect x="52" y="122" width="75" height="20" rx="4" fill="#f59e0b" />
+    <text x="89" y="136" class="badge" fill="#ffffff">CONVEYOR</text>
+    <text x="52" y="165" class="box-title" fill="#92400e">Conveyor Controller</text>
+    <text x="52" y="188" class="box-desc">• Rotational belt motor velocity</text>
+    <text x="52" y="206" class="box-desc">• Distance sensors: ds1, ds2, ds3</text>
+    <text x="52" y="224" class="box-desc">• Detection trigger (STOP signal)</text>
+    <text x="52" y="242" class="box-desc">• Auto-resume after grasp cycle</text>
+    <text x="52" y="265" class="box-desc" font-weight="600" fill="#b45309">Device: conveyor_controller.py</text>
+  </g>
+
+  <!-- Flow 2: Overhead Camera Subsystem -->
+  <g filter="url(#shadow)">
+    <rect x="370" y="110" width="260" height="180" rx="12" fill="url(#blueGrad)" stroke="#3b82f6" stroke-width="1.5" />
+    <rect x="382" y="122" width="70" height="20" rx="4" fill="#3b82f6" />
+    <text x="417" y="136" class="badge" fill="#ffffff">VISION</text>
+    <text x="382" y="165" class="box-title" fill="#1e40af">Camera Controller</text>
+    <text x="382" y="188" class="box-desc">• 1024x768 RGB sensor stream</text>
+    <text x="382" y="206" class="box-desc">• Webots Recognition API for [x,y,z]</text>
+    <text x="382" y="224" class="box-desc">• TCP client (127.0.0.1:5050)</text>
+    <text x="382" y="242" class="box-desc">• Timeout &amp; 3x retry protection</text>
+    <text x="382" y="265" class="box-desc" font-weight="600" fill="#1d4ed8">Device: camera_controller.py</text>
+  </g>
+
+  <!-- Flow 3: YOLOv8 OBB Server -->
+  <g filter="url(#shadow)">
+    <rect x="700" y="110" width="260" height="180" rx="12" fill="url(#purpleGrad)" stroke="#8b5cf6" stroke-width="1.5" />
+    <rect x="712" y="122" width="70" height="20" rx="4" fill="#8b5cf6" />
+    <text x="747" y="136" class="badge" fill="#ffffff">AI / OBB</text>
+    <text x="712" y="165" class="box-title" fill="#5b21b6">YOLOv8 Detection Server</text>
+    <text x="712" y="188" class="box-desc">• Oriented Bounding Box (best.pt)</text>
+    <text x="712" y="206" class="box-desc">• Predicts centroid, width, height, θ</text>
+    <text x="712" y="224" class="box-desc">• Symmetric normalization [0°-180°]</text>
+    <text x="712" y="242" class="box-desc">• Auto-reconnect client handling</text>
+    <text x="712" y="265" class="box-desc" font-weight="600" fill="#6d28d9">Standalone: yolo_server.py</text>
+  </g>
+
+  <!-- Arrow: Conveyor -> Camera -->
+  <path d="M 300 180 L 362 180" stroke="#3b82f6" stroke-width="2.5" fill="none" marker-end="url(#arrow)" />
+  <text x="308" y="172" class="arrow-text">STOP</text>
+
+  <!-- Arrow: Camera <-> YOLO Server -->
+  <path d="M 630 170 L 692 170" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#arrow-purple)" />
+  <text x="635" y="162" class="arrow-text" fill="#7c3aed">RGB Frame</text>
+
+  <path d="M 692 210 L 638 210" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow-purple)" />
+  <text x="636" y="226" class="arrow-text" fill="#7c3aed">Angle θ</text>
+
+  <!-- Flow 4: UR10e Arm Controller & Robotiq Gripper -->
+  <g filter="url(#shadow)">
+    <rect x="370" y="340" width="590" height="180" rx="12" fill="url(#emeraldGrad)" stroke="#10b981" stroke-width="1.5" />
+    <rect x="382" y="352" width="75" height="20" rx="4" fill="#10b981" />
+    <text x="419" y="366" class="badge" fill="#ffffff">ROBOTICS</text>
+    <text x="382" y="395" class="box-title" fill="#065f46">UR10e Arm &amp; Robotiq 3-Finger Gripper Controller</text>
+    
+    <g transform="translate(382, 412)">
+      <text x="0" y="15" class="box-desc" font-weight="600" fill="#047857">Planar Inverse Kinematics (2D IK):</text>
+      <text x="0" y="33" class="box-desc">• L1 = 0.613m, L2 = 0.637m trigonometric shoulder/elbow joint solver</text>
+      <text x="0" y="51" class="box-desc">• Wrist orientation alignment with workpiece yaw: wrist_3 = θ_rad</text>
+      <text x="0" y="69" class="box-desc">• 40-step interpolated motion profiles (move_horiz, move_vert)</text>
+      
+      <text x="300" y="15" class="box-desc" font-weight="600" fill="#047857">State Machine &amp; Safety:</text>
+      <text x="300" y="33" class="box-desc">• WAITING → TRANSLATING → DESCENDING</text>
+      <text x="300" y="51" class="box-desc">• GRASPING (0.4 rad) → ASCENDING → RELEASING</text>
+      <text x="300" y="69" class="box-desc">• 30s / 10s watchdog timeouts &amp; abort recovery</text>
+    </g>
+    <text x="382" y="505" class="box-desc" font-weight="600" fill="#047857">Device: arm_controller.py</text>
+  </g>
+
+  <!-- Arrow: Camera -> Arm Controller -->
+  <path d="M 500 290 L 500 332" stroke="#10b981" stroke-width="2.5" fill="none" marker-end="url(#arrow-green)" />
+  <text x="508" y="318" class="arrow-text" fill="#059669">[x, y, z, θ_rad]</text>
+
+  <!-- Arrow: Arm Controller -> Conveyor (Restart Belt) -->
+  <path d="M 370 450 L 170 450 L 170 298" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5 4" fill="none" marker-end="url(#arrow)" />
+  <text x="180" y="440" class="arrow-text" fill="#d97706">START_CONV (Restart)</text>
+
+</svg>
