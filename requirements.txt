@@ -1,0 +1,9 @@
+# Core computer vision & deep learning
+ultralytics>=8.0.0
+opencv-python>=4.6.0
+numpy>=1.21.0
+torch>=1.12.0
+Pillow>=9.0.0
+
+# Simulation
+# Webots R2023b or later (includes Python controller API)
