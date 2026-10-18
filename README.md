@@ -14,12 +14,22 @@
 
 <br/>
 
-<!-- Hero Animation -->
-<img src="assets/demo.gif" alt="UR10e YOLOv8 Pick and Place Simulation Demo" width="850px" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+### 🎥 Accelerated Simulation Demonstration (2.5x Speed)
+
+https://github.com/user-attachments/assets/demo-video-placeholder
+
+<video src="https://raw.githubusercontent.com/chaabanejasser01/webots-ur10-pick-and-place-yolo8/main/assets/ur10e_pick_and_place_demo.mp4" controls="controls" muted="muted" width="850px" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <source src="assets/ur10e_pick_and_place_demo.mp4" type="video/mp4">
+</video>
+
+<!-- Auto-playing Hero Animation -->
+<p align="center">
+  <img src="assets/demo.gif" alt="UR10e YOLOv8 Pick and Place Simulation Demo" width="850px" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+</p>
 
 <p align="center">
-  <b>⚡ Accelerated Simulation Demo (2.5x speed)</b><br/>
-  <i>Full-length demonstration video: <a href="assets/ur10e_pick_and_place_demo.mp4"><code>assets/ur10e_pick_and_place_demo.mp4</code></a></i>
+  <b>⚡ Accelerated Simulation Video (2.5x Speed)</b><br/>
+  <i>Direct MP4 Download / Fullscreen: <a href="assets/ur10e_pick_and_place_demo.mp4"><code>assets/ur10e_pick_and_place_demo.mp4</code></a> or <a href="ur10e_pick_and_place_demo.mp4"><code>ur10e_pick_and_place_demo.mp4</code></a></i>
 </p>
 
 </div>
